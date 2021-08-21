@@ -52,7 +52,6 @@ function couponApply(){
 		grandTotal.innerText = preValue;
 	}
     input.value = '';
-				
 }
 
 // Event Listeners for all buttons
