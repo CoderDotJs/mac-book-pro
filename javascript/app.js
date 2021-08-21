@@ -7,23 +7,24 @@ const storage__512GB = document.getElementById('storage-size-512');
 const storage__1TB = document.getElementById('storage-size-1tb');
 const delivery__free = document.getElementById('delivery-free');
 const delivery__notFree = document.getElementById('delivery-nonfree');
-const input = document.getElementById('input');
 const coupon__btn = document.getElementById('coupon-btn');
 
 
 //get the value and update price
+
 function getValueAndUpdate(updateLocation, price){
     const location = document.getElementById(updateLocation);
     location.innerText = price;
 }
 
-//update total
-function updateTotal(laptop,memory,storage,delivery,display){
-    const laptopCost = document.getElementById(laptop).innerText;
-    const memoryCost = document.getElementById(memory).innerText;
-    const storageCost = document.getElementById(storage).innerText;
-    const deliveryCost = document.getElementById(delivery).innerText;
-	const displayTotal = document.getElementById(display);
+//Update total on the claculation table after adding extras
+
+function updateTotal(){
+    const laptopCost = document.getElementById('laptop-price').innerText;
+    const memoryCost = document.getElementById('memory-charge').innerText;
+    const storageCost = document.getElementById('storage-charge').innerText;
+    const deliveryCost = document.getElementById('delivery-charge').innerText;
+	const displayTotal = document.getElementById('total');
 	const totalAll = document.getElementById('total-all');
 
     const total = parseInt(laptopCost) + parseInt(memoryCost) + parseInt(storageCost) + parseInt(deliveryCost);
@@ -31,7 +32,6 @@ function updateTotal(laptop,memory,storage,delivery,display){
     displayTotal.innerText = total;
     totalAll.innerText = total;
 }
-
 
 //coupon apply and get the last total
 
@@ -46,7 +46,7 @@ function couponApply(){
         grandTotal.innerText = preValue - (preValue * 20 /100);
     }
     else if(input.value == '' || input.value !== 'stevekaku'){
-        alert('not allowed')
+        alert('Not a Valid Code');
 	}
 	else{
 		grandTotal.innerText = preValue;
@@ -58,32 +58,31 @@ function couponApply(){
 
 ram__eightGB.addEventListener('click', function(){
     getValueAndUpdate('memory-charge', 0);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 ram__sixteenGB.addEventListener('click', function(){
     getValueAndUpdate('memory-charge', 180);
-    
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 storage__256GB.addEventListener('click', function(){
     getValueAndUpdate('storage-charge', 0);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 storage__512GB.addEventListener('click', function(){
     getValueAndUpdate('storage-charge', 100);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 storage__1TB.addEventListener('click', function(){
     getValueAndUpdate('storage-charge', 180);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 delivery__free.addEventListener('click', function(){
     getValueAndUpdate('delivery-charge', 0);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal();
 })
 delivery__notFree.addEventListener('click', function(){
     getValueAndUpdate('delivery-charge', 20);
-    updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
+    updateTotal()
 })
 coupon__btn.addEventListener('click', function(){
 	couponApply();
