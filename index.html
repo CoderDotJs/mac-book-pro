@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Tailwind css   -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Mac Book Pro</title>
+</head>
+<body>
+    <main>
+        <section class="contain w-4/5 border-b-2 mx-auto flex justify-around pt-4 px-4 items-start">
+            <div class="img w-2/5 px-8">
+                <img src="images/mac.png" alt="macbook pro" class="block mx-auto">
+            </div>
+            <div class="img-description w-3/5 px-8">
+                <h1 class="text-5xl font-semibold text-gray-800">Customize your Blue 24-inch iMac with Apple M1 chip</h1>
+
+                <p class="py-4">
+                    Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-cores GPU, and 16-core Nural Engine 8GB unified memory 256GB SSD stroage Two Thunderbold / USB 4 ports Magic Mouse Magic Keyboard US English
+                </p>
+
+                <div class="rams my-10">
+                    <h4 class="text-gray-800 font-bold text-xl my-4">Memory</h4>
+
+                <button id="eight-gb-memory" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">8GB unified memory</button>
+                <button id="sixteen-gb-memory" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">16GB unified memory</button>
+
+                </div>
+
+                <div class="storages my-10">
+                    <h4 class="text-gray-800 font-bold text-xl my-4">Storage</h4>
+
+
+                    <button id="storage-size-256" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">256GB SSD Storage</button>
+                    <button id="storage-size-512" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">512GB SSD Storage</button>
+                    <button id="storage-size-1tb" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">1TB SSD Storage</button>
+                </div>
+
+                <div class="rams my-10">
+                    <h4 class="text-gray-800 font-bold text-xl my-4">Choose Your Delivery Option: </h4>
+
+                <button id="delivery-free" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">Fryday, Aug 25 FREE Prime Delivery</button>
+                <button id="delivery-nonfree" class="border border-gray-800 p-2 text-gray-800 text-normal rounded-md hover:bg-gray-800 hover:text-white">Friday, Aug 21 Delivery charge $20</button>
+
+                </div>
+
+                <div class="calculation-table">
+                    <table class="table-auto">
+                        <tr class="border-b-2 border-gray-300">
+                            <td class="font-bold py-2 px-2">Best Price</td>
+                            <td class="pl-8 py-2 text-gray-800 px-2 font-bold">$ <span id="laptop-price">1299</span></td>
+                        </tr>
+                        <tr class="border-b-2 border-gray-300">
+                            <td class="font-bold py-2 px-2">Extra Memory Cost</td>
+                            <td class="pl-8 py-2 text-gray-800 px-2 font-bold">$ <span id="memory-charge">0</span></td>
+                        </tr>
+                        <tr class="border-b-2 border-gray-300">
+                            <td class="font-bold py-2 px-2">Extra Storage Cost</td>
+                            <td class="pl-8 py-2 text-gray-800 px-2 font-bold">$ <span id="storage-charge">0</span></td>
+                        </tr>
+                        <tr class="border-b-2 border-gray-700">
+                            <td class="font-bold py-2 px-2">Delivery Charge</td>
+                            <td class="pl-8 py-2 text-gray-800 px-2 font-bold">$ <span id="delivery-charge">0</span></td>
+                        </tr>
+                        <tr class="border-b-2 border-gray-300">
+                            <td class="font-bold py-2 px-2">Total Price</td>
+                            <td class="pl-8 py-2 text-gray-800 px-2 font-bold">$ <span id="total">1299</span></td>
+                        </tr>
+                    </table>
+                    
+                    <div class="promo my-8">
+                        <p class="my-2">Add your promo: </p>
+                    <input id="input" type="text" class="w-2/4 border rounded border-gray-600 p-2">
+                    <button id="coupon-btn" class="py-2 px-4 rounded hover:bg-red-400 bg-red-500 text-white">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="text-gray-800 font-semibold text-center text-6xl py-6">Total: $ <span id="total-all">1299</span></h1>
+    </main>
+
+        <!-- javascript file  -->
+
+    <script src="javascript/app.js"></script>
+
+</body>
+</html>
