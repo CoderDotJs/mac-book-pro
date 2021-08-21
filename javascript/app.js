@@ -9,7 +9,7 @@ const delivery__free = document.getElementById('delivery-free');
 const delivery__notFree = document.getElementById('delivery-nonfree');
 const coupon__btn = document.getElementById('coupon-btn');
 
-
+let track = false;
 //get the value and update price
 
 function getValueAndUpdate(updateLocation, price){
@@ -30,7 +30,12 @@ function updateTotal(){
     const total = parseInt(laptopCost) + parseInt(memoryCost) + parseInt(storageCost) + parseInt(deliveryCost);
     
     displayTotal.innerText = total;
-    totalAll.innerText = total;
+    if(track == true){
+        totalAll.innerText = total - (total * 20/100);
+    }
+    else{
+        totalAll.innerText = total;
+    }
 }
 
 //coupon apply and get the last total
@@ -44,6 +49,11 @@ function couponApply(){
 	
 	if(input.value == 'stevekaku'){
         grandTotal.innerText = preValue - (preValue * 20 /100);
+        track = true;
+        input.placeholder = 'Voucher Applied! Enjoy 20% off'
+        input.setAttribute('disabled', true);
+        coupon__btn.setAttribute('disabled', true);
+        coupon__btn.style.cursor = 'not-allowed'
     }
     else if(input.value == '' || input.value !== 'stevekaku'){
         alert('Not a Valid Code');
