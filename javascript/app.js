@@ -1,4 +1,5 @@
 //Variables from dom to add event listeners
+
 const ram__eightGB = document.getElementById('eight-gb-memory');
 const ram__sixteenGB = document.getElementById('sixteen-gb-memory');
 const storage__256GB = document.getElementById('storage-size-256');
@@ -8,6 +9,7 @@ const delivery__free = document.getElementById('delivery-free');
 const delivery__notFree = document.getElementById('delivery-nonfree');
 const input = document.getElementById('input');
 const coupon__btn = document.getElementById('coupon-btn');
+
 
 //get the value and update price
 function getValueAndUpdate(updateLocation, price){
@@ -49,15 +51,15 @@ function couponApply(){
 	else{
 		grandTotal.innerText = preValue;
 	}
+    input.value = '';
 				
 }
 
-// Event Listeners
+// Event Listeners for all buttons
 
 ram__eightGB.addEventListener('click', function(){
     getValueAndUpdate('memory-charge', 0);
     updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
-    
 })
 ram__sixteenGB.addEventListener('click', function(){
     getValueAndUpdate('memory-charge', 180);
@@ -85,5 +87,5 @@ delivery__notFree.addEventListener('click', function(){
     updateTotal('laptop-price','memory-charge','storage-charge','delivery-charge','total')
 })
 coupon__btn.addEventListener('click', function(){
-	couponApply()
+	couponApply();
 })
